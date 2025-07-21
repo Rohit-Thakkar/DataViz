@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Anomaly Comparison</title>
+    <style>
+        body { font-family: system-ui, sans-serif; text-align: center; background-color: #f9f9f9; margin: 0; }
+        .navbar { background-color: #333; padding: 10px; text-align: center; }
+        .navbar a { color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px; }
+        .navbar a:hover { background-color: #555; }
+        h1 { color: #333; }
+        .controls { margin: 20px; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: inline-block; }
+        .controls input { width: 80px; padding: 5px; font-size: 1em; }
+        .controls button { padding: 7px 15px; font-size: 1em; cursor: pointer; background-color: #0077b6; color: white; border: none; border-radius: 5px; }
+        .summary { margin: 20px auto; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 800px; font-size: 1.2em; min-height: 1.5em;}
+        .summary-item { margin: 5px 15px; display: inline-block; }
+        .maps-container { display: flex; justify-content: center; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+        .map-wrapper { background-color: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .map-wrapper h2 { margin-top: 0; }
+        .table-container { margin: 30px auto; }
+        #comparison-table { border-collapse: collapse; margin: auto; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        #comparison-table th, #comparison-table td { padding: 10px 15px; border: 1px solid #ddd; text-align: right; }
+        #comparison-table th { background-color: #f2f2f2; }
+        #comparison-table td:first-child { text-align: left; font-weight: bold; }
+        .colored-cell { color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .country { fill: #d1d1d1; stroke: #fff; stroke-width: 0.5px; }
+        .latitude-band { opacity: 0.6; transition: opacity 0.2s; }
+        .latitude-band:hover { opacity: 0.8; }
+        .graticule { fill: none; stroke: #999; stroke-width: 0.5px; stroke-dasharray: 2,2; }
+        .color-legend { margin-top: 20px; display: inline-block; }
+        .tooltip { position: absolute; background-color: rgba(0, 0, 0, 0.75); color: white; padding: 8px 12px; border-radius: 5px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+        .footer { margin-top: 20px; padding-bottom: 20px; font-size: 12px; color: #777; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="main.html">Main Map</a>
+        <a href="graph.html">Graph</a>
+        <a href="map_compare.html">Compare Maps</a>
+    </nav>
+
+    <h1>Compare Zonal Temperature Anomalies</h1>
+    <div class="controls">
+        <label>Year 1:</label>
+        <input type="number" id="year1-input" value="1900" min="1880" max="2024">
+        <label>Year 2:</label>
+        <input type="number" id="year2-input" value="2024" min="1880" max="2024">
+        <button id="compare-btn">Compare</button>
+    </div>
+    <div class="summary">
+        <span class="summary-item" id="summary-year1"></span>
+        <span class="summary-item" id="summary-year2"></span>
+        <span class="summary-item" id="summary-change"></span>
+    </div>
+    <div class="maps-container">
+        <div class="map-wrapper">
+            <h2 id="map1-title"></h2>
+            <svg id="map1" width="500" height="350"></svg>
+        </div>
+        <div class="map-wrapper">
+            <h2 id="map2-title"></h2>
+            <svg id="map2" width="500" height="350"></svg>
+        </div>
+    </div>
+    <svg id="legend" class="color-legend" width="350" height="60"></svg>
+    <div class="table-container">
+        <table id="comparison-table">
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th id="table-head-y1"></th>
+                    <th id="table-head-y2"></th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="tooltip"></div>
+    
+    <div class="footer">
+        <p>Data Source: NASA GISS Surface Temperature Analysis (GISTEMP v4)</p>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script>
+        async function initComparisonMap() {
+            const [world, tempData] = await Promise.all([
+                d3.json("countries-110m.json"),
+                d3.json("climate_data.json")
+            ]);
+
+            const tempDataByYear = d3.group(tempData, d => d.Year);
+            const colorScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([0.015, -0.015]);
+            const tooltip = d3.select(".tooltip");
+
+            const zones = [
+                { key: 'Arctic', bounds: [90, 64] }, { key: 'N_Mid_Lat', bounds: [64, 24] },
+                { key: 'N_Tropic', bounds: [24, 0] }, { key: 'S_Tropic', bounds: [0, -24] },
+                { key: 'S_Mid_Lat', bounds: [-24, -64] }, { key: 'Antarctic', bounds: [-64, -90] }
+            ];
+
+            function drawMap(selector, year) {
+                const svg = d3.select(selector);
+                svg.selectAll("*").remove();
+                
+                const width = +svg.attr("width");
+                const height = +svg.attr("height");
+                const projection = d3.geoNaturalEarth1().fitSize([width, height], topojson.feature(world, world.objects.countries));
+                const pathGenerator = d3.geoPath().projection(projection);
+                const yearData = tempDataByYear.get(+year)?.[0];
+
+                svg.append("g").selectAll(".country").data(topojson.feature(world, world.objects.countries).features)
+                    .join("path").attr("class", "country").attr("d", pathGenerator);
+                
+                const graticule = d3.geoGraticule();
+                svg.append("path")
+                    .datum(graticule)
+                    .attr("class", "graticule")
+                    .attr("d", pathGenerator);
+
+                if (yearData) {
+                    svg.append("g").selectAll(".latitude-band").data(zones)
+                        .join("rect")
+                        .attr("class", "latitude-band")
+                        .attr("x", 0).attr("y", d => projection([0, d.bounds[0]])[1])
+                        .attr("width", width).attr("height", d => Math.abs(projection([0, d.bounds[1]])[1] - projection([0, d.bounds[0]])[1]))
+                        .attr("fill", d => {
+                            const anomaly = yearData[d.key];
+                            return anomaly !== undefined ? colorScale(anomaly) : "#ccc";
+                        })
+                        .on("mouseover", () => tooltip.style("opacity", 1))
+                        .on("mousemove", (event, d) => {
+                            const anomaly = yearData[d.key];
+                            tooltip.style("left", (event.pageX + 15) + "px")
+                                   .style("top", (event.pageY - 28) + "px")
+                                   .html(`<b>${d.key.replace('_', ' ')}</b><br/>Anomaly: ${anomaly !== undefined ? anomaly.toFixed(4) + '°C' : 'No Data'}`);
+                        })
+                        .on("mouseout", () => tooltip.style("opacity", 0));
+                }
+            }
+
+            function drawLegend() {
+                const legendSvg = d3.select("#legend");
+                const legendWidth = +legendSvg.attr("width");
+                const legendMargin = { left: 20, right: 20 };
+                const legendBarWidth = legendWidth - legendMargin.left - legendMargin.right;
+                const legendScale = d3.scaleLinear().domain([-0.015, 0.015]).range([0, legendBarWidth]);
+                const legendAxis = d3.axisBottom(legendScale).ticks(5).tickSize(5).tickFormat(d => d + "°C");
+                const defs = legendSvg.append("defs");
+                const linearGradient = defs.append("linearGradient").attr("id", "map-gradient");
+                linearGradient.selectAll("stop").data(colorScale.ticks().map((t, i, n) => ({ offset: `${100*i/n.length}%`, color: colorScale(t) })))
+                    .enter().append("stop").attr("offset", d => d.offset).attr("stop-color", d => d.color);
+                legendSvg.append("rect").attr("x", legendMargin.left).attr("width", legendBarWidth).attr("height", 20).style("fill", "url(#map-gradient)");
+                legendSvg.append("g").attr("transform", `translate(${legendMargin.left}, 20)`).call(legendAxis);
+            }
+
+            const year1Input = d3.select("#year1-input");
+            const year2Input = d3.select("#year2-input");
+            const minYear = d3.min(tempData, d => d.Year);
+            const maxYear = d3.max(tempData, d => d.Year);
+
+            function updateComparison() {
+                const year1 = year1Input.property("value");
+                const year2 = year2Input.property("value");
+
+                if (+year1 < minYear || +year1 > maxYear || +year2 < minYear || +year2 > maxYear) {
+                    d3.select("#summary-year1").text("");
+                    d3.select("#summary-year2").text("");
+                    d3.select("#summary-change").html(`<span style="color:red;">Please enter years between ${minYear} and ${maxYear}.</span>`);
+                    d3.select("#comparison-table tbody").html("");
+                    return;
+                }
+                
+                d3.select("#map1-title").text(`Year: ${year1}`);
+                d3.select("#map2-title").text(`Year: ${year2}`);
+                drawMap("#map1", year1);
+                drawMap("#map2", year2);
+
+                const year1Data = tempDataByYear.get(+year1)?.[0];
+                const year2Data = tempDataByYear.get(+year2)?.[0];
+
+                if (year1Data && year2Data) {
+                    const avg1 = year1Data.Global;
+                    const avg2 = year2Data.Global;
+                    const difference = avg2 - avg1;
+
+                    d3.select("#summary-year1").text(`Year ${year1} Avg: ${avg1.toFixed(4)}°C`);
+                    d3.select("#summary-year2").text(`Year ${year2} Avg: ${avg2.toFixed(4)}°C`);
+                    let diffColor = difference > 0 ? 'red' : (difference < 0 ? 'green' : 'grey');
+                    let symbol = difference > 0 ? '▲' : (difference < 0 ? '▼' : '=');
+                    let sign = difference > 0 ? '+' : '';
+                    d3.select("#summary-change").html(`Change: <span style="color:${diffColor};">${symbol} ${sign}${difference.toFixed(4)}°C</span>`);
+                    
+                    d3.select("#table-head-y1").text(`Year ${year1}`);
+                    d3.select("#table-head-y2").text(`Year ${year2}`);
+                    const regionsForTable = ['Global', ...zones.map(z => z.key)];
+                    const tableData = regionsForTable.map(regionKey => {
+                        const val1 = year1Data[regionKey];
+                        const val2 = year2Data[regionKey];
+                        const change = val2 - val1;
+                        const changeColor = change > 0 ? 'red' : (change < 0 ? 'green' : 'grey');
+                        const changeSymbol = change > 0 ? '▲' : (change < 0 ? '▼' : '=');
+                        const changeSign = change > 0 ? '+' : '';
+
+                        return {
+                            region: regionKey.replace('_', ' '),
+                            val1, val2, change, changeColor, changeSymbol, changeSign
+                        };
+                    });
+                    
+                    d3.select("#comparison-table tbody").selectAll("tr")
+                        .data(tableData)
+                        .join("tr")
+                        .html(d => `
+                            <td>${d.region}</td>
+                            <td class="colored-cell" style="background-color: ${colorScale(d.val1)};">${d.val1.toFixed(4)}°C</td>
+                            <td class="colored-cell" style="background-color: ${colorScale(d.val2)};">${d.val2.toFixed(4)}°C</td>
+                            <td style="color: ${d.changeColor};">
+                                ${d.changeSymbol} ${d.changeSign}${d.change.toFixed(4)}°C
+                            </td>
+                        `);
+                }
+            }
+            
+            d3.select("#compare-btn").on("click", updateComparison);
+            drawLegend();
+            updateComparison();
+        }
+
+        initComparisonMap();
+    </script>
+</body>
+</html>

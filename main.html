@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonal Temperature Anomaly Map</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .controls {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .controls button {
+            font-size: 1em;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .map-wrapper {
+            display: inline-block;
+            background-color: #f0f8ff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .country {
+            fill: #d1d1d1;
+            stroke: #fff;
+            stroke-width: 0.5px;
+        }
+
+        .latitude-band {
+            opacity: 0.6;
+            stroke: #000;
+            stroke-width: 0.5px;
+            stroke-opacity: 0.2;
+            transition: opacity 0.2s;
+        }
+
+        .latitude-band:hover {
+            opacity: 0.8;
+        }
+
+        .graticule {
+            fill: none;
+            stroke: #999;
+            stroke-width: 0.5px;
+            stroke-dasharray: 2, 2;
+        }
+
+        #year-display {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .color-legend {
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="main.html">Main Map</a>
+        <a href="graph.html">Graph</a>
+        <a href="map_compare.html">Compare Maps</a>
+    </nav>
+
+    <h1>Zonal Temperature Anomaly</h1>
+    <div class="controls">
+        <button id="play-pause-btn">▶ Play</button>
+        <label for="year-slider">Year:</label>
+        <input type="range" id="year-slider" min="1880" max="2024" step="1" value="1980" style="width:50%;">
+    </div>
+    <div id="year-display">1980</div>
+    <div class="map-wrapper">
+        <svg id="map" width="960" height="500"></svg>
+    </div>
+    <svg id="legend" class="color-legend" width="350" height="60"></svg>
+    <div class="tooltip"></div>
+
+    <style>
+        .footer-container {
+            max-width: 960px;
+            /* Matches the width of your main visualizations */
+            margin: 40px auto;
+            /* Centers the container and adds space above it */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            /* Better for reading paragraphs */
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .footer-container h3 {
+            margin-top: 0;
+            text-align: center;
+            color: #0077b6;
+        }
+
+        .footer-container a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="footer-container">
+        <h3>About the Data and Processing</h3>
+        <p>The primary data for this project was sourced from the <a
+                href="https://data.giss.nasa.gov/gistemp/"><u><strong>NASA GISS Surface Temperature Analysis (GISTEMP
+                    v4)</strong></u></a>, which was provided as two separate CSV files for global and zonal temperature
+            anomalies. A custom Python script using the pandas library was developed to perform an ETL
+            (Extract, Transform, Load) process, preparing the raw data for efficient use in D3.js.</p>
+        <p>Key processing steps included selecting and renaming relevant data columns, merging the two datasets on their
+            common 'Year' field, and converting temperature values from 1/100ths of a degree to standard degrees
+            Celsius. The final values were rounded to six-digit precision. For the map visualizations, geographic
+            boundaries were provided by a <strong>TopoJSON</strong> world atlas file. This entire process resulted in a
+            single, clean `climate_data.json` file that serves as a unified data source for all three visualizations.
+        </p>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script>
+        async function initZonalMap() {
+            const [world, tempData] = await Promise.all([
+                d3.json("countries-110m.json"),
+                d3.json("climate_data.json")
+            ]);
+
+            const tempDataByYear = d3.group(tempData, d => d.Year);
+
+            const width = 960;
+            const height = 500;
+            const svg = d3.select("#map");
+
+            const colorScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([0.015, -0.015]);
+
+            const tooltip = d3.select(".tooltip");
+            const projection = d3.geoNaturalEarth1().fitSize([width, height], topojson.feature(world, world.objects.countries));
+            const pathGenerator = d3.geoPath().projection(projection);
+
+            const zones = [
+                { key: 'Arctic', bounds: [90, 64] }, { key: 'N_Mid_Lat', bounds: [64, 24] },
+                { key: 'N_Tropic', bounds: [24, 0] }, { key: 'S_Tropic', bounds: [0, -24] },
+                { key: 'S_Mid_Lat', bounds: [-24, -64] }, { key: 'Antarctic', bounds: [-64, -90] }
+            ];
+
+            svg.append("g").selectAll(".country").data(topojson.feature(world, world.objects.countries).features)
+                .join("path").attr("class", "country").attr("d", pathGenerator);
+
+            const graticule = d3.geoGraticule();
+            svg.append("path")
+                .datum(graticule)
+                .attr("class", "graticule")
+                .attr("d", pathGenerator);
+
+            svg.append("g").selectAll(".latitude-band").data(zones)
+                .join("rect")
+                .attr("class", "latitude-band")
+                .attr("x", 0).attr("y", d => projection([0, d.bounds[0]])[1])
+                .attr("width", width).attr("height", d => Math.abs(projection([0, d.bounds[1]])[1] - projection([0, d.bounds[0]])[1]))
+                .attr("fill", "#ccc")
+                .on("mouseover", function () { tooltip.style("opacity", 1); })
+                .on("mousemove", function (event, d) {
+                    const year = slider.property("value");
+                    const yearData = tempDataByYear.get(+year)[0];
+                    const anomaly = yearData[d.key];
+                    tooltip.style("left", (event.pageX + 15) + "px")
+                        .style("top", (event.pageY - 28) + "px")
+                        .html(`<b>${d.key.replace('_', ' ')}</b><br/>Anomaly: ${anomaly !== undefined ? anomaly.toFixed(4) + '°C' : 'No Data'}`);
+                })
+                .on("mouseout", function () { tooltip.style("opacity", 0); });
+
+            const legendSvg = d3.select("#legend");
+            const legendWidth = +legendSvg.attr("width");
+            const legendMargin = { left: 20, right: 20 };
+            const legendBarWidth = legendWidth - legendMargin.left - legendMargin.right;
+            const legendScale = d3.scaleLinear().domain([-0.015, 0.015]).range([0, legendBarWidth]);
+            const legendAxis = d3.axisBottom(legendScale).ticks(5).tickSize(5).tickFormat(d => d + "°C");
+
+            const defs = legendSvg.append("defs");
+            const linearGradient = defs.append("linearGradient").attr("id", "map-gradient");
+            linearGradient.selectAll("stop").data(colorScale.ticks().map((t, i, n) => ({ offset: `${100 * i / n.length}%`, color: colorScale(t) })))
+                .enter().append("stop").attr("offset", d => d.offset).attr("stop-color", d => d.color);
+
+            legendSvg.append("rect").attr("x", legendMargin.left).attr("width", legendBarWidth).attr("height", 20).style("fill", "url(#map-gradient)");
+            legendSvg.append("g").attr("transform", `translate(${legendMargin.left}, 20)`).call(legendAxis);
+
+            const slider = d3.select("#year-slider");
+            const yearDisplay = d3.select("#year-display");
+            const playPauseBtn = d3.select("#play-pause-btn");
+            const minYear = d3.min(tempData, d => d.Year);
+            const maxYear = d3.max(tempData, d => d.Year);
+            slider.attr("min", minYear).attr("max", maxYear).property("value", maxYear);
+
+            let animationTimer = null;
+            let isPlaying = false;
+
+            function update(year) {
+                slider.property("value", year);
+                const yearData = tempDataByYear.get(+year)[0];
+                const prevYearData = tempDataByYear.get(+year - 1);
+                const currentGlobal = yearData.Global;
+                let titleHTML = `${year} | Global Avg: ${currentGlobal.toFixed(4)}°C`;
+
+                if (prevYearData) {
+                    const prevGlobal = prevYearData[0].Global;
+                    const difference = currentGlobal - prevGlobal;
+                    let diffColor, symbol, sign;
+                    if (difference > 0) { diffColor = 'red'; symbol = '▲'; sign = '+'; }
+                    else if (difference < 0) { diffColor = 'green'; symbol = '▼'; sign = ''; }
+                    else { diffColor = 'grey'; symbol = '='; sign = ''; }
+                    titleHTML += ` <span style="color: ${diffColor}; font-size: 0.8em;">(${symbol} ${sign}${difference.toFixed(4)}°C)</span>`;
+                }
+                yearDisplay.html(titleHTML);
+
+                svg.selectAll(".latitude-band").transition().duration(200)
+                    .attr("fill", d => {
+                        const anomaly = yearData[d.key];
+                        return anomaly !== undefined ? colorScale(anomaly) : "#ccc";
+                    });
+            }
+
+            function stopAnimation() {
+                clearInterval(animationTimer);
+                playPauseBtn.html("▶ Play");
+                isPlaying = false;
+            }
+
+            function startAnimation() {
+                playPauseBtn.html("❚❚ Pause");
+                isPlaying = true;
+
+                animationTimer = setInterval(() => {
+                    let currentYear = +slider.property("value");
+                    if (currentYear < maxYear) {
+                        currentYear++;
+                        update(currentYear);
+                    } else {
+                        stopAnimation();
+                    }
+                }, 1000); // Speed of the animation in milliseconds
+            }
+
+            playPauseBtn.on("click", () => {
+                if (isPlaying) {
+                    stopAnimation();
+                } else {
+                    startAnimation();
+                }
+            });
+
+            slider.on("input", event => {
+                stopAnimation();
+                update(event.target.value);
+            });
+
+            update(slider.property("value"));
+        }
+
+        initZonalMap();
+    </script>
+</body>
+
+</html>

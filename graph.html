@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Anomaly Graph</title>
+    <style>
+        body { font-family: system-ui, sans-serif; text-align: center; background-color: #f4f4f4; margin: 0; }
+        .navbar { background-color: #333; padding: 10px; text-align: center; }
+        .navbar a { color: white; padding: 10px 20px; text-decoration: none; font-size: 16px; border-radius: 5px; }
+        .navbar a:hover { background-color: #555; }
+        h1 { color: #333; margin-top: 20px;}
+        .chart-container { display: inline-block; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .axis-label { font-size: 12px; fill: #555; }
+        .legend-item { cursor: pointer; transition: opacity 0.2s; }
+        .legend-text { font-size: 14px; }
+        .tooltip-text { font-size: 12px; font-family: monospace; }
+        .footer { margin-top: 20px; font-size: 12px; color: #777; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="main.html">Main Map</a>
+        <a href="graph.html">Graph</a>
+        <a href="map_compare.html">Compare Maps</a>
+    </nav>
+
+    <h1>Global vs. Polar Temperature Anomalies (1880-Present)</h1>
+
+    <div class="chart-container">
+        <svg id="visualization" width="960" height="500"></svg>
+    </div>
+
+    <div class="footer">
+        <p>Data Source: NASA GISS Surface Temperature Analysis (GISTEMP v4)</p>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        async function drawChart() {
+            const data = await d3.json("climate_data.json");
+
+            const margin = {top: 20, right: 120, bottom: 50, left: 60};
+            const width = 960 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            const svg = d3.select("#visualization")
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            const regions = ['Global', 'Arctic', 'Antarctic'];
+            
+            // NEW: State object to track line visibility
+            const visibilityState = { Global: true, Arctic: true, Antarctic: true };
+
+            const xScale = d3.scaleLinear().domain(d3.extent(data, d => d.Year)).range([0, width]);
+            
+            const yScale = d3.scaleLinear().domain([-0.03, 0.03]).range([height, 0]);
+
+            const colorScale = d3.scaleOrdinal().domain(regions).range(['#333333', '#0077b6', '#f4a261']);
+
+            const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
+            svg.append("g").attr("transform", `translate(0,${height})`).call(xAxis);
+            svg.append("text").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + margin.bottom - 10).attr("class", "axis-label").text("Year");
+            
+            const yAxis = d3.axisLeft(yScale);
+            svg.append("g").call(yAxis);
+            svg.append("text").attr("text-anchor", "middle").attr("transform", "rotate(-90)").attr("x", -height / 2).attr("y", -margin.left + 20).attr("class", "axis-label").text("Temperature Anomaly (°C)");
+
+            regions.forEach(region => {
+                const lineGenerator = d3.line().x(d => xScale(d.Year)).y(d => yScale(d[region]));
+                svg.append("path")
+                    .datum(data)
+                    .attr("class", `line line-${region}`)
+                    .attr("fill", "none")
+                    .attr("stroke", colorScale(region))
+                    .attr("stroke-width", 2.5)
+                    .attr("d", lineGenerator);
+            });
+            
+            const legend = svg.append("g").attr("transform", `translate(${width + 20}, 0)`);
+            const legendItems = legend.selectAll("g")
+                .data(regions)
+                .join("g")
+                .attr("class", "legend-item")
+                .attr("transform", (d, i) => `translate(0, ${i * 25})`)
+                .on("click", function(event, d) {
+                    // UPDATED: Toggle the state and update visuals
+                    visibilityState[d] = !visibilityState[d];
+                    const isVisible = visibilityState[d];
+
+                    svg.select(`.line-${d}`).style("display", isVisible ? "initial" : "none");
+                    d3.select(this).style("opacity", isVisible ? 1.0 : 0.5);
+                });
+
+            legendItems.append("rect").attr("width", 18).attr("height", 18).attr("fill", d => colorScale(d));
+            legendItems.append("text").attr("x", 24).attr("y", 14).attr("class", "legend-text").text(d => d);
+
+            const tooltip = svg.append("g").style("display", "none");
+            const tooltipLine = tooltip.append("line").attr("stroke", "#aaa").attr("stroke-width", 1).attr("y1", 0).attr("y2", height);
+            regions.forEach(region => {
+                tooltip.append("circle").attr("r", 5).attr("fill", colorScale(region)).attr("stroke", "white").attr("stroke-width", 1.5).attr("class", `tooltip-circle-${region}`);
+            });
+            const tooltipText = tooltip.append("text").attr("class", "tooltip-text").attr("x", 10).attr("y", 10);
+            const bisectYear = d3.bisector(d => d.Year).left;
+            
+            svg.append("rect")
+                .attr("width", width)
+                .attr("height", height)
+                .style("fill", "none")
+                .style("pointer-events", "all")
+                .on("mouseover", () => tooltip.style("display", null))
+                .on("mouseout", () => tooltip.style("display", "none"))
+                .on("mousemove", mousemoved);
+
+            function mousemoved(event) {
+                const mouseX = d3.pointer(event)[0];
+                const year = xScale.invert(mouseX);
+                const index = bisectYear(data, year, 1);
+                const d0 = data[index - 1];
+                const d1 = data[index];
+                const d = (d1 && (year - d0.Year > d1.Year - year)) ? d1 : d0;
+                
+                const cx = xScale(d.Year);
+                tooltipLine.attr("x1", cx).attr("x2", cx);
+                
+                tooltipText.selectAll("tspan").remove();
+                tooltipText.append("tspan").attr("x", 10).attr("dy", "1.2em").text(`Year: ${d.Year}`);
+
+                // UPDATED: Check visibility state before showing tooltip info
+                regions.forEach(region => {
+                    const circle = tooltip.select(`.tooltip-circle-${region}`);
+                    if (visibilityState[region]) {
+                        circle.style("display", null)
+                            .attr("cx", cx)
+                            .attr("cy", yScale(d[region]));
+                        
+                        tooltipText.append("tspan")
+                            .attr("x", 10).attr("dy", "1.2em")
+                            .style("fill", colorScale(region))
+                            .text(`${region}: ${d[region].toFixed(4)}°C`);
+                    } else {
+                        circle.style("display", "none");
+                    }
+                });
+            }
+        }
+
+        drawChart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1452 @@
+[
+  {
+    "Year": 1880,
+    "Global": -0.0017,
+    "Arctic": -0.008,
+    "N_Mid_Lat": -0.0029,
+    "N_Tropic": -0.0017,
+    "S_Tropic": -0.0009,
+    "S_Mid_Lat": -0.0003,
+    "Antarctic": 0.0068
+  },
+  {
+    "Year": 1881,
+    "Global": -0.0009,
+    "Arctic": -0.0091,
+    "N_Mid_Lat": -0.0021,
+    "N_Tropic": 0.0008,
+    "S_Tropic": 0.0012,
+    "S_Mid_Lat": -0.0005,
+    "Antarctic": 0.0061
+  },
+  {
+    "Year": 1882,
+    "Global": -0.0011,
+    "Arctic": -0.014,
+    "N_Mid_Lat": -0.0017,
+    "N_Tropic": -0.0007,
+    "S_Tropic": -0.0004,
+    "S_Mid_Lat": 0.0002,
+    "Antarctic": 0.0064
+  },
+  {
+    "Year": 1883,
+    "Global": -0.0018,
+    "Arctic": -0.0017,
+    "N_Mid_Lat": -0.0028,
+    "N_Tropic": -0.0019,
+    "S_Tropic": -0.0014,
+    "S_Mid_Lat": -0.0003,
+    "Antarctic": 0.0051
+  },
+  {
+    "Year": 1884,
+    "Global": -0.0028,
+    "Arctic": -0.013,
+    "N_Mid_Lat": -0.0048,
+    "N_Tropic": -0.0014,
+    "S_Tropic": -0.0016,
+    "S_Mid_Lat": -0.0018,
+    "Antarctic": 0.0066
+  },
+  {
+    "Year": 1885,
+    "Global": -0.0033,
+    "Arctic": -0.015,
+    "N_Mid_Lat": -0.0047,
+    "N_Tropic": -0.0008,
+    "S_Tropic": -0.0019,
+    "S_Mid_Lat": -0.0033,
+    "Antarctic": 0.0083
+  },
+  {
+    "Year": 1886,
+    "Global": -0.0031,
+    "Arctic": -0.0158,
+    "N_Mid_Lat": -0.0041,
+    "N_Tropic": -0.0022,
+    "S_Tropic": -0.0017,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": 0.006
+  },
+  {
+    "Year": 1887,
+    "Global": -0.0036,
+    "Arctic": -0.0176,
+    "N_Mid_Lat": -0.003,
+    "N_Tropic": -0.0031,
+    "S_Tropic": -0.003,
+    "S_Mid_Lat": -0.0027,
+    "Antarctic": 0.0033
+  },
+  {
+    "Year": 1888,
+    "Global": -0.0017,
+    "Arctic": -0.013,
+    "N_Mid_Lat": -0.0026,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.0014,
+    "S_Mid_Lat": -0.003,
+    "Antarctic": 0.0017
+  },
+  {
+    "Year": 1889,
+    "Global": -0.0011,
+    "Arctic": -0.0068,
+    "N_Mid_Lat": -0.0029,
+    "N_Tropic": 0.0001,
+    "S_Tropic": 0.0015,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": 0.0046
+  },
+  {
+    "Year": 1890,
+    "Global": -0.0035,
+    "Arctic": -0.0113,
+    "N_Mid_Lat": -0.0028,
+    "N_Tropic": -0.0028,
+    "S_Tropic": -0.0047,
+    "S_Mid_Lat": -0.0017,
+    "Antarctic": 0.0016
+  },
+  {
+    "Year": 1891,
+    "Global": -0.0022,
+    "Arctic": -0.0109,
+    "N_Mid_Lat": -0.0037,
+    "N_Tropic": 0.0,
+    "S_Tropic": -0.0016,
+    "S_Mid_Lat": -0.0017,
+    "Antarctic": -0.0014
+  },
+  {
+    "Year": 1892,
+    "Global": -0.0027,
+    "Arctic": -0.0111,
+    "N_Mid_Lat": -0.0019,
+    "N_Tropic": -0.0035,
+    "S_Tropic": -0.0025,
+    "S_Mid_Lat": 0.0003,
+    "Antarctic": 0.001
+  },
+  {
+    "Year": 1893,
+    "Global": -0.0031,
+    "Arctic": -0.0065,
+    "N_Mid_Lat": -0.0049,
+    "N_Tropic": -0.0044,
+    "S_Tropic": -0.003,
+    "S_Mid_Lat": 0.0007,
+    "Antarctic": -0.0003
+  },
+  {
+    "Year": 1894,
+    "Global": -0.0031,
+    "Arctic": -0.0095,
+    "N_Mid_Lat": -0.002,
+    "N_Tropic": -0.005,
+    "S_Tropic": -0.0018,
+    "S_Mid_Lat": -0.0014,
+    "Antarctic": -0.0036
+  },
+  {
+    "Year": 1895,
+    "Global": -0.0023,
+    "Arctic": -0.0068,
+    "N_Mid_Lat": -0.0028,
+    "N_Tropic": -0.0015,
+    "S_Tropic": 0.0001,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": -0.0057
+  },
+  {
+    "Year": 1896,
+    "Global": -0.0012,
+    "Arctic": -0.0089,
+    "N_Mid_Lat": -0.0024,
+    "N_Tropic": 0.0005,
+    "S_Tropic": 0.0014,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": 0.0027
+  },
+  {
+    "Year": 1897,
+    "Global": -0.0011,
+    "Arctic": -0.0056,
+    "N_Mid_Lat": -0.0026,
+    "N_Tropic": 0.0013,
+    "S_Tropic": 0.002,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": 0.0042
+  },
+  {
+    "Year": 1898,
+    "Global": -0.0028,
+    "Arctic": -0.0117,
+    "N_Mid_Lat": -0.0025,
+    "N_Tropic": -0.0019,
+    "S_Tropic": -0.0026,
+    "S_Mid_Lat": -0.0027,
+    "Antarctic": 0.0039
+  },
+  {
+    "Year": 1899,
+    "Global": -0.0018,
+    "Arctic": -0.0107,
+    "N_Mid_Lat": -0.0016,
+    "N_Tropic": -0.0016,
+    "S_Tropic": -0.0008,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": 0.006
+  },
+  {
+    "Year": 1900,
+    "Global": -0.0009,
+    "Arctic": -0.0058,
+    "N_Mid_Lat": -0.0017,
+    "N_Tropic": 0.0009,
+    "S_Tropic": 0.0025,
+    "S_Mid_Lat": -0.0029,
+    "Antarctic": 0.0028
+  },
+  {
+    "Year": 1901,
+    "Global": -0.0016,
+    "Arctic": -0.004,
+    "N_Mid_Lat": -0.0016,
+    "N_Tropic": -0.0007,
+    "S_Tropic": -0.0001,
+    "S_Mid_Lat": -0.0027,
+    "Antarctic": 0.0027
+  },
+  {
+    "Year": 1902,
+    "Global": -0.0029,
+    "Arctic": -0.0155,
+    "N_Mid_Lat": -0.0033,
+    "N_Tropic": -0.0003,
+    "S_Tropic": -0.0005,
+    "S_Mid_Lat": -0.0028,
+    "Antarctic": -0.0003
+  },
+  {
+    "Year": 1903,
+    "Global": -0.0038,
+    "Arctic": -0.0025,
+    "N_Mid_Lat": -0.0057,
+    "N_Tropic": -0.0025,
+    "S_Tropic": -0.0033,
+    "S_Mid_Lat": -0.0035,
+    "Antarctic": -0.0049
+  },
+  {
+    "Year": 1904,
+    "Global": -0.0048,
+    "Arctic": -0.0023,
+    "N_Mid_Lat": -0.0057,
+    "N_Tropic": -0.0045,
+    "S_Tropic": -0.005,
+    "S_Mid_Lat": -0.0037,
+    "Antarctic": -0.0131
+  },
+  {
+    "Year": 1905,
+    "Global": -0.0027,
+    "Arctic": -0.0008,
+    "N_Mid_Lat": -0.0063,
+    "N_Tropic": -0.0012,
+    "S_Tropic": -0.0006,
+    "S_Mid_Lat": -0.0033,
+    "Antarctic": -0.0033
+  },
+  {
+    "Year": 1906,
+    "Global": -0.0023,
+    "Arctic": -0.0028,
+    "N_Mid_Lat": -0.004,
+    "N_Tropic": -0.0021,
+    "S_Tropic": -0.0019,
+    "S_Mid_Lat": -0.0021,
+    "Antarctic": -0.0071
+  },
+  {
+    "Year": 1907,
+    "Global": -0.004,
+    "Arctic": -0.006,
+    "N_Mid_Lat": -0.0053,
+    "N_Tropic": -0.0031,
+    "S_Tropic": -0.0033,
+    "S_Mid_Lat": -0.0021,
+    "Antarctic": -0.0119
+  },
+  {
+    "Year": 1908,
+    "Global": -0.0044,
+    "Arctic": -0.0026,
+    "N_Mid_Lat": -0.0053,
+    "N_Tropic": -0.0043,
+    "S_Tropic": -0.0048,
+    "S_Mid_Lat": -0.0028,
+    "Antarctic": 0.0068
+  },
+  {
+    "Year": 1909,
+    "Global": -0.005,
+    "Arctic": -0.0077,
+    "N_Mid_Lat": -0.0045,
+    "N_Tropic": -0.0046,
+    "S_Tropic": -0.0054,
+    "S_Mid_Lat": -0.0037,
+    "Antarctic": -0.0056
+  },
+  {
+    "Year": 1910,
+    "Global": -0.0045,
+    "Arctic": -0.0063,
+    "N_Mid_Lat": -0.0051,
+    "N_Tropic": -0.005,
+    "S_Tropic": -0.0051,
+    "S_Mid_Lat": -0.0033,
+    "Antarctic": 0.0017
+  },
+  {
+    "Year": 1911,
+    "Global": -0.0045,
+    "Arctic": -0.0031,
+    "N_Mid_Lat": -0.0048,
+    "N_Tropic": -0.0043,
+    "S_Tropic": -0.0043,
+    "S_Mid_Lat": -0.0043,
+    "Antarctic": 0.0006
+  },
+  {
+    "Year": 1912,
+    "Global": -0.0037,
+    "Arctic": -0.0052,
+    "N_Mid_Lat": -0.0051,
+    "N_Tropic": -0.0029,
+    "S_Tropic": -0.001,
+    "S_Mid_Lat": -0.0036,
+    "Antarctic": -0.0163
+  },
+  {
+    "Year": 1913,
+    "Global": -0.0036,
+    "Arctic": -0.0051,
+    "N_Mid_Lat": -0.0052,
+    "N_Tropic": -0.0041,
+    "S_Tropic": -0.0016,
+    "S_Mid_Lat": -0.0028,
+    "Antarctic": -0.0103
+  },
+  {
+    "Year": 1914,
+    "Global": -0.0016,
+    "Arctic": -0.0039,
+    "N_Mid_Lat": -0.003,
+    "N_Tropic": -0.0013,
+    "S_Tropic": -0.0002,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": -0.0036
+  },
+  {
+    "Year": 1915,
+    "Global": -0.0015,
+    "Arctic": -0.006,
+    "N_Mid_Lat": -0.002,
+    "N_Tropic": -0.0001,
+    "S_Tropic": -0.0003,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": -0.0198
+  },
+  {
+    "Year": 1916,
+    "Global": -0.0037,
+    "Arctic": -0.0053,
+    "N_Mid_Lat": -0.0025,
+    "N_Tropic": -0.0051,
+    "S_Tropic": -0.0041,
+    "S_Mid_Lat": -0.0023,
+    "Antarctic": -0.0104
+  },
+  {
+    "Year": 1917,
+    "Global": -0.0047,
+    "Arctic": -0.0083,
+    "N_Mid_Lat": -0.0044,
+    "N_Tropic": -0.007,
+    "S_Tropic": -0.0059,
+    "S_Mid_Lat": -0.0023,
+    "Antarctic": 0.0007
+  },
+  {
+    "Year": 1918,
+    "Global": -0.0031,
+    "Arctic": -0.0103,
+    "N_Mid_Lat": -0.0036,
+    "N_Tropic": -0.0039,
+    "S_Tropic": -0.003,
+    "S_Mid_Lat": -0.0006,
+    "Antarctic": -0.0027
+  },
+  {
+    "Year": 1919,
+    "Global": -0.0028,
+    "Arctic": -0.0071,
+    "N_Mid_Lat": -0.0031,
+    "N_Tropic": -0.0024,
+    "S_Tropic": -0.0018,
+    "S_Mid_Lat": -0.0014,
+    "Antarctic": 0.002
+  },
+  {
+    "Year": 1920,
+    "Global": -0.0028,
+    "Arctic": -0.0004,
+    "N_Mid_Lat": -0.0036,
+    "N_Tropic": -0.0038,
+    "S_Tropic": -0.0014,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": -0.0114
+  },
+  {
+    "Year": 1921,
+    "Global": -0.002,
+    "Arctic": -0.0004,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": -0.003,
+    "S_Tropic": -0.0022,
+    "S_Mid_Lat": -0.0023,
+    "Antarctic": -0.0083
+  },
+  {
+    "Year": 1922,
+    "Global": -0.0029,
+    "Arctic": -0.0031,
+    "N_Mid_Lat": -0.0015,
+    "N_Tropic": -0.0032,
+    "S_Tropic": -0.0032,
+    "S_Mid_Lat": -0.0024,
+    "Antarctic": -0.0027
+  },
+  {
+    "Year": 1923,
+    "Global": -0.0027,
+    "Arctic": 0.0016,
+    "N_Mid_Lat": -0.0027,
+    "N_Tropic": -0.0032,
+    "S_Tropic": -0.0027,
+    "S_Mid_Lat": -0.0027,
+    "Antarctic": -0.0054
+  },
+  {
+    "Year": 1924,
+    "Global": -0.0028,
+    "Arctic": 0.005,
+    "N_Mid_Lat": -0.0025,
+    "N_Tropic": -0.0027,
+    "S_Tropic": -0.0025,
+    "S_Mid_Lat": -0.004,
+    "Antarctic": -0.0052
+  },
+  {
+    "Year": 1925,
+    "Global": -0.0023,
+    "Arctic": -0.0005,
+    "N_Mid_Lat": -0.002,
+    "N_Tropic": -0.0028,
+    "S_Tropic": -0.002,
+    "S_Mid_Lat": -0.0025,
+    "Antarctic": -0.0086
+  },
+  {
+    "Year": 1926,
+    "Global": -0.0011,
+    "Arctic": 0.0056,
+    "N_Mid_Lat": -0.0023,
+    "N_Tropic": 0.0,
+    "S_Tropic": 0.0003,
+    "S_Mid_Lat": -0.0035,
+    "Antarctic": -0.0063
+  },
+  {
+    "Year": 1927,
+    "Global": -0.0022,
+    "Arctic": 0.0003,
+    "N_Mid_Lat": -0.0014,
+    "N_Tropic": -0.0014,
+    "S_Tropic": -0.0018,
+    "S_Mid_Lat": -0.003,
+    "Antarctic": -0.0138
+  },
+  {
+    "Year": 1928,
+    "Global": -0.002,
+    "Arctic": 0.0066,
+    "N_Mid_Lat": -0.0024,
+    "N_Tropic": -0.0015,
+    "S_Tropic": -0.0016,
+    "S_Mid_Lat": -0.0029,
+    "Antarctic": -0.0212
+  },
+  {
+    "Year": 1929,
+    "Global": -0.0037,
+    "Arctic": 0.0012,
+    "N_Mid_Lat": -0.0039,
+    "N_Tropic": -0.0028,
+    "S_Tropic": -0.0028,
+    "S_Mid_Lat": -0.0043,
+    "Antarctic": -0.0107
+  },
+  {
+    "Year": 1930,
+    "Global": -0.0016,
+    "Arctic": 0.005,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": -0.0009,
+    "S_Tropic": -0.0013,
+    "S_Mid_Lat": -0.0033,
+    "Antarctic": -0.0259
+  },
+  {
+    "Year": 1931,
+    "Global": -0.001,
+    "Arctic": 0.0056,
+    "N_Mid_Lat": -0.0015,
+    "N_Tropic": 0.001,
+    "S_Tropic": 0.0006,
+    "S_Mid_Lat": -0.0042,
+    "Antarctic": -0.0041
+  },
+  {
+    "Year": 1932,
+    "Global": -0.0016,
+    "Arctic": 0.0046,
+    "N_Mid_Lat": -0.0022,
+    "N_Tropic": -0.0019,
+    "S_Tropic": -0.0014,
+    "S_Mid_Lat": -0.0021,
+    "Antarctic": -0.0098
+  },
+  {
+    "Year": 1933,
+    "Global": -0.0029,
+    "Arctic": -0.0015,
+    "N_Mid_Lat": -0.0013,
+    "N_Tropic": -0.0028,
+    "S_Tropic": -0.0028,
+    "S_Mid_Lat": -0.0022,
+    "Antarctic": -0.0114
+  },
+  {
+    "Year": 1934,
+    "Global": -0.0013,
+    "Arctic": 0.0089,
+    "N_Mid_Lat": -0.0014,
+    "N_Tropic": -0.0026,
+    "S_Tropic": -0.0024,
+    "S_Mid_Lat": -0.0015,
+    "Antarctic": -0.0056
+  },
+  {
+    "Year": 1935,
+    "Global": -0.002,
+    "Arctic": 0.0033,
+    "N_Mid_Lat": -0.0017,
+    "N_Tropic": -0.0016,
+    "S_Tropic": -0.002,
+    "S_Mid_Lat": -0.003,
+    "Antarctic": -0.0171
+  },
+  {
+    "Year": 1936,
+    "Global": -0.0015,
+    "Arctic": 0.0041,
+    "N_Mid_Lat": -0.0027,
+    "N_Tropic": -0.0005,
+    "S_Tropic": -0.0021,
+    "S_Mid_Lat": -0.0026,
+    "Antarctic": -0.0003
+  },
+  {
+    "Year": 1937,
+    "Global": -0.0003,
+    "Arctic": 0.0123,
+    "N_Mid_Lat": -0.0004,
+    "N_Tropic": 0.0,
+    "S_Tropic": -0.0011,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": 0.0037
+  },
+  {
+    "Year": 1938,
+    "Global": 0.0,
+    "Arctic": 0.0152,
+    "N_Mid_Lat": 0.0001,
+    "N_Tropic": -0.0018,
+    "S_Tropic": -0.0027,
+    "S_Mid_Lat": -0.0006,
+    "Antarctic": -0.0086
+  },
+  {
+    "Year": 1939,
+    "Global": -0.0002,
+    "Arctic": 0.0055,
+    "N_Mid_Lat": 0.0007,
+    "N_Tropic": -0.0012,
+    "S_Tropic": -0.0013,
+    "S_Mid_Lat": -0.0004,
+    "Antarctic": -0.016
+  },
+  {
+    "Year": 1940,
+    "Global": 0.0012,
+    "Arctic": 0.0099,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": 0.0026,
+    "S_Tropic": 0.0029,
+    "S_Mid_Lat": 0.0003,
+    "Antarctic": -0.0005
+  },
+  {
+    "Year": 1941,
+    "Global": 0.0018,
+    "Arctic": 0.0002,
+    "N_Mid_Lat": 0.0007,
+    "N_Tropic": 0.0054,
+    "S_Tropic": 0.0043,
+    "S_Mid_Lat": 0.0003,
+    "Antarctic": -0.0046
+  },
+  {
+    "Year": 1942,
+    "Global": 0.0006,
+    "Arctic": 0.0072,
+    "N_Mid_Lat": 0.0005,
+    "N_Tropic": 0.0011,
+    "S_Tropic": 0.0003,
+    "S_Mid_Lat": 0.0005,
+    "Antarctic": -0.0089
+  },
+  {
+    "Year": 1943,
+    "Global": 0.0009,
+    "Arctic": 0.0143,
+    "N_Mid_Lat": 0.001,
+    "N_Tropic": -0.0011,
+    "S_Tropic": -0.0007,
+    "S_Mid_Lat": 0.0007,
+    "Antarctic": 0.0114
+  },
+  {
+    "Year": 1944,
+    "Global": 0.002,
+    "Arctic": 0.0118,
+    "N_Mid_Lat": 0.0008,
+    "N_Tropic": 0.0011,
+    "S_Tropic": 0.0026,
+    "S_Mid_Lat": 0.0019,
+    "Antarctic": -0.0096
+  },
+  {
+    "Year": 1945,
+    "Global": 0.0009,
+    "Arctic": 0.0065,
+    "N_Mid_Lat": 0.0003,
+    "N_Tropic": 0.001,
+    "S_Tropic": 0.0024,
+    "S_Mid_Lat": 0.0004,
+    "Antarctic": -0.018
+  },
+  {
+    "Year": 1946,
+    "Global": -0.0007,
+    "Arctic": -0.0003,
+    "N_Mid_Lat": 0.0016,
+    "N_Tropic": -0.0002,
+    "S_Tropic": -0.0007,
+    "S_Mid_Lat": -0.0022,
+    "Antarctic": -0.002
+  },
+  {
+    "Year": 1947,
+    "Global": -0.0003,
+    "Arctic": 0.0107,
+    "N_Mid_Lat": 0.0003,
+    "N_Tropic": -0.0003,
+    "S_Tropic": -0.0009,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": -0.0022
+  },
+  {
+    "Year": 1948,
+    "Global": -0.0011,
+    "Arctic": 0.0012,
+    "N_Mid_Lat": 0.0,
+    "N_Tropic": -0.0022,
+    "S_Tropic": -0.0014,
+    "S_Mid_Lat": -0.0019,
+    "Antarctic": -0.014
+  },
+  {
+    "Year": 1949,
+    "Global": -0.0011,
+    "Arctic": 0.002,
+    "N_Mid_Lat": 0.0004,
+    "N_Tropic": -0.0023,
+    "S_Tropic": -0.0015,
+    "S_Mid_Lat": -0.0017,
+    "Antarctic": -0.02
+  },
+  {
+    "Year": 1950,
+    "Global": -0.0017,
+    "Arctic": 0.0018,
+    "N_Mid_Lat": 0.0003,
+    "N_Tropic": -0.003,
+    "S_Tropic": -0.0028,
+    "S_Mid_Lat": -0.0006,
+    "Antarctic": -0.0086
+  },
+  {
+    "Year": 1951,
+    "Global": -0.0007,
+    "Arctic": 0.0007,
+    "N_Mid_Lat": 0.0012,
+    "N_Tropic": 0.0,
+    "S_Tropic": -0.0012,
+    "S_Mid_Lat": -0.0022,
+    "Antarctic": -0.007
+  },
+  {
+    "Year": 1952,
+    "Global": 0.0001,
+    "Arctic": 0.0027,
+    "N_Mid_Lat": 0.0018,
+    "N_Tropic": -0.0001,
+    "S_Tropic": 0.0004,
+    "S_Mid_Lat": -0.001,
+    "Antarctic": -0.0052
+  },
+  {
+    "Year": 1953,
+    "Global": 0.0008,
+    "Arctic": 0.0103,
+    "N_Mid_Lat": 0.0014,
+    "N_Tropic": 0.0008,
+    "S_Tropic": 0.0006,
+    "S_Mid_Lat": -0.0008,
+    "Antarctic": -0.0112
+  },
+  {
+    "Year": 1954,
+    "Global": -0.0013,
+    "Arctic": 0.008,
+    "N_Mid_Lat": 0.0,
+    "N_Tropic": -0.0014,
+    "S_Tropic": -0.0029,
+    "S_Mid_Lat": -0.0017,
+    "Antarctic": -0.0081
+  },
+  {
+    "Year": 1955,
+    "Global": -0.0014,
+    "Arctic": -0.0023,
+    "N_Mid_Lat": 0.0023,
+    "N_Tropic": -0.0029,
+    "S_Tropic": -0.0038,
+    "S_Mid_Lat": -0.0016,
+    "Antarctic": 0.0121
+  },
+  {
+    "Year": 1956,
+    "Global": -0.0019,
+    "Arctic": 0.0001,
+    "N_Mid_Lat": -0.0009,
+    "N_Tropic": -0.0028,
+    "S_Tropic": -0.0037,
+    "S_Mid_Lat": -0.0014,
+    "Antarctic": 0.0077
+  },
+  {
+    "Year": 1957,
+    "Global": 0.0005,
+    "Arctic": 0.0009,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.001,
+    "S_Mid_Lat": -0.0009,
+    "Antarctic": 0.0049
+  },
+  {
+    "Year": 1958,
+    "Global": 0.0006,
+    "Arctic": -0.0018,
+    "N_Mid_Lat": 0.0012,
+    "N_Tropic": 0.0026,
+    "S_Tropic": 0.0015,
+    "S_Mid_Lat": -0.0008,
+    "Antarctic": -0.0055
+  },
+  {
+    "Year": 1959,
+    "Global": 0.0003,
+    "Arctic": 0.0049,
+    "N_Mid_Lat": 0.0004,
+    "N_Tropic": 0.0007,
+    "S_Tropic": 0.0008,
+    "S_Mid_Lat": -0.0003,
+    "Antarctic": -0.0039
+  },
+  {
+    "Year": 1960,
+    "Global": -0.0003,
+    "Arctic": 0.0034,
+    "N_Mid_Lat": 0.0011,
+    "N_Tropic": 0.0006,
+    "S_Tropic": -0.0003,
+    "S_Mid_Lat": -0.001,
+    "Antarctic": -0.0078
+  },
+  {
+    "Year": 1961,
+    "Global": 0.0006,
+    "Arctic": -0.0016,
+    "N_Mid_Lat": 0.0018,
+    "N_Tropic": -0.0007,
+    "S_Tropic": 0.0,
+    "S_Mid_Lat": 0.0014,
+    "Antarctic": 0.0021
+  },
+  {
+    "Year": 1962,
+    "Global": 0.0003,
+    "Arctic": 0.0044,
+    "N_Mid_Lat": 0.0014,
+    "N_Tropic": -0.0004,
+    "S_Tropic": -0.0005,
+    "S_Mid_Lat": 0.0009,
+    "Antarctic": -0.0065
+  },
+  {
+    "Year": 1963,
+    "Global": 0.0005,
+    "Arctic": -0.0016,
+    "N_Mid_Lat": 0.0013,
+    "N_Tropic": 0.0014,
+    "S_Tropic": 0.001,
+    "S_Mid_Lat": -0.001,
+    "Antarctic": -0.0003
+  },
+  {
+    "Year": 1964,
+    "Global": -0.002,
+    "Arctic": -0.0066,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": -0.0014,
+    "S_Tropic": -0.0014,
+    "S_Mid_Lat": -0.003,
+    "Antarctic": -0.0037
+  },
+  {
+    "Year": 1965,
+    "Global": -0.0011,
+    "Arctic": -0.0028,
+    "N_Mid_Lat": -0.0012,
+    "N_Tropic": -0.0008,
+    "S_Tropic": 0.0002,
+    "S_Mid_Lat": -0.0023,
+    "Antarctic": 0.0
+  },
+  {
+    "Year": 1966,
+    "Global": -0.0006,
+    "Arctic": -0.0076,
+    "N_Mid_Lat": 0.0009,
+    "N_Tropic": 0.0016,
+    "S_Tropic": -0.0001,
+    "S_Mid_Lat": -0.0023,
+    "Antarctic": 0.0012
+  },
+  {
+    "Year": 1967,
+    "Global": -0.0002,
+    "Arctic": 0.0036,
+    "N_Mid_Lat": -0.0005,
+    "N_Tropic": -0.0011,
+    "S_Tropic": -0.0017,
+    "S_Mid_Lat": -0.0009,
+    "Antarctic": 0.0031
+  },
+  {
+    "Year": 1968,
+    "Global": -0.0008,
+    "Arctic": -0.0034,
+    "N_Mid_Lat": -0.0008,
+    "N_Tropic": -0.0002,
+    "S_Tropic": -0.0011,
+    "S_Mid_Lat": -0.0014,
+    "Antarctic": -0.0007
+  },
+  {
+    "Year": 1969,
+    "Global": 0.0005,
+    "Arctic": -0.0004,
+    "N_Mid_Lat": -0.0017,
+    "N_Tropic": 0.0035,
+    "S_Tropic": 0.0032,
+    "S_Mid_Lat": 0.0,
+    "Antarctic": -0.0015
+  },
+  {
+    "Year": 1970,
+    "Global": 0.0003,
+    "Arctic": -0.0021,
+    "N_Mid_Lat": -0.0006,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.0007,
+    "S_Mid_Lat": 0.0011,
+    "Antarctic": 0.0035
+  },
+  {
+    "Year": 1971,
+    "Global": -0.0008,
+    "Arctic": -0.0008,
+    "N_Mid_Lat": -0.001,
+    "N_Tropic": -0.003,
+    "S_Tropic": -0.0022,
+    "S_Mid_Lat": 0.0003,
+    "Antarctic": 0.0048
+  },
+  {
+    "Year": 1972,
+    "Global": 0.0001,
+    "Arctic": -0.0037,
+    "N_Mid_Lat": -0.0024,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.0027,
+    "S_Mid_Lat": 0.0016,
+    "Antarctic": 0.0048
+  },
+  {
+    "Year": 1973,
+    "Global": 0.0016,
+    "Arctic": 0.0006,
+    "N_Mid_Lat": 0.0002,
+    "N_Tropic": 0.0007,
+    "S_Tropic": 0.003,
+    "S_Mid_Lat": 0.0021,
+    "Antarctic": 0.0034
+  },
+  {
+    "Year": 1974,
+    "Global": -0.0007,
+    "Arctic": -0.0019,
+    "N_Mid_Lat": -0.0018,
+    "N_Tropic": -0.0023,
+    "S_Tropic": -0.0017,
+    "S_Mid_Lat": 0.0021,
+    "Antarctic": 0.0065
+  },
+  {
+    "Year": 1975,
+    "Global": -0.0001,
+    "Arctic": 0.001,
+    "N_Mid_Lat": -0.0005,
+    "N_Tropic": -0.0031,
+    "S_Tropic": -0.0017,
+    "S_Mid_Lat": 0.0013,
+    "Antarctic": 0.003
+  },
+  {
+    "Year": 1976,
+    "Global": -0.001,
+    "Arctic": -0.0008,
+    "N_Mid_Lat": -0.0028,
+    "N_Tropic": -0.0013,
+    "S_Tropic": -0.001,
+    "S_Mid_Lat": 0.001,
+    "Antarctic": -0.0022
+  },
+  {
+    "Year": 1977,
+    "Global": 0.0018,
+    "Arctic": 0.0016,
+    "N_Mid_Lat": 0.0006,
+    "N_Tropic": 0.0009,
+    "S_Tropic": 0.0022,
+    "S_Mid_Lat": 0.0022,
+    "Antarctic": 0.0028
+  },
+  {
+    "Year": 1978,
+    "Global": 0.0007,
+    "Arctic": -0.0016,
+    "N_Mid_Lat": -0.0004,
+    "N_Tropic": 0.001,
+    "S_Tropic": 0.0005,
+    "S_Mid_Lat": 0.0021,
+    "Antarctic": 0.0002
+  },
+  {
+    "Year": 1979,
+    "Global": 0.0016,
+    "Arctic": -0.0061,
+    "N_Mid_Lat": 0.0009,
+    "N_Tropic": 0.0025,
+    "S_Tropic": 0.0027,
+    "S_Mid_Lat": 0.0029,
+    "Antarctic": -0.0021
+  },
+  {
+    "Year": 1980,
+    "Global": 0.0026,
+    "Arctic": 0.0026,
+    "N_Mid_Lat": 0.0002,
+    "N_Tropic": 0.0032,
+    "S_Tropic": 0.0028,
+    "S_Mid_Lat": 0.0035,
+    "Antarctic": 0.0056
+  },
+  {
+    "Year": 1981,
+    "Global": 0.0032,
+    "Arctic": 0.0109,
+    "N_Mid_Lat": 0.0008,
+    "N_Tropic": 0.0021,
+    "S_Tropic": 0.0014,
+    "S_Mid_Lat": 0.0028,
+    "Antarctic": 0.0062
+  },
+  {
+    "Year": 1982,
+    "Global": 0.0014,
+    "Arctic": -0.004,
+    "N_Mid_Lat": -0.0008,
+    "N_Tropic": 0.0024,
+    "S_Tropic": 0.0029,
+    "S_Mid_Lat": 0.0018,
+    "Antarctic": -0.0011
+  },
+  {
+    "Year": 1983,
+    "Global": 0.0031,
+    "Arctic": 0.0019,
+    "N_Mid_Lat": -0.0007,
+    "N_Tropic": 0.0028,
+    "S_Tropic": 0.0057,
+    "S_Mid_Lat": 0.0021,
+    "Antarctic": 0.0009
+  },
+  {
+    "Year": 1984,
+    "Global": 0.0016,
+    "Arctic": 0.0036,
+    "N_Mid_Lat": -0.0013,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.0029,
+    "S_Mid_Lat": 0.0016,
+    "Antarctic": 0.0054
+  },
+  {
+    "Year": 1985,
+    "Global": 0.0012,
+    "Arctic": 0.0039,
+    "N_Mid_Lat": -0.0001,
+    "N_Tropic": 0.0004,
+    "S_Tropic": 0.0014,
+    "S_Mid_Lat": 0.003,
+    "Antarctic": 0.0007
+  },
+  {
+    "Year": 1986,
+    "Global": 0.0018,
+    "Arctic": 0.0001,
+    "N_Mid_Lat": 0.0003,
+    "N_Tropic": 0.0017,
+    "S_Tropic": 0.0027,
+    "S_Mid_Lat": 0.0025,
+    "Antarctic": -0.0009
+  },
+  {
+    "Year": 1987,
+    "Global": 0.0032,
+    "Arctic": -0.0036,
+    "N_Mid_Lat": 0.0012,
+    "N_Tropic": 0.0055,
+    "S_Tropic": 0.0062,
+    "S_Mid_Lat": 0.0032,
+    "Antarctic": 0.0001
+  },
+  {
+    "Year": 1988,
+    "Global": 0.0039,
+    "Arctic": 0.0059,
+    "N_Mid_Lat": 0.0024,
+    "N_Tropic": 0.0032,
+    "S_Tropic": 0.0042,
+    "S_Mid_Lat": 0.0038,
+    "Antarctic": 0.0093
+  },
+  {
+    "Year": 1989,
+    "Global": 0.0027,
+    "Arctic": 0.0033,
+    "N_Mid_Lat": 0.0025,
+    "N_Tropic": 0.0006,
+    "S_Tropic": 0.0019,
+    "S_Mid_Lat": 0.0036,
+    "Antarctic": 0.0037
+  },
+  {
+    "Year": 1990,
+    "Global": 0.0045,
+    "Arctic": 0.0058,
+    "N_Mid_Lat": 0.0049,
+    "N_Tropic": 0.0037,
+    "S_Tropic": 0.0036,
+    "S_Mid_Lat": 0.0037,
+    "Antarctic": 0.0037
+  },
+  {
+    "Year": 1991,
+    "Global": 0.004,
+    "Arctic": 0.0075,
+    "N_Mid_Lat": 0.0026,
+    "N_Tropic": 0.0032,
+    "S_Tropic": 0.004,
+    "S_Mid_Lat": 0.0031,
+    "Antarctic": 0.0098
+  },
+  {
+    "Year": 1992,
+    "Global": 0.0022,
+    "Arctic": -0.0017,
+    "N_Mid_Lat": -0.0004,
+    "N_Tropic": 0.0019,
+    "S_Tropic": 0.0037,
+    "S_Mid_Lat": 0.002,
+    "Antarctic": 0.0041
+  },
+  {
+    "Year": 1993,
+    "Global": 0.0023,
+    "Arctic": 0.0054,
+    "N_Mid_Lat": -0.0011,
+    "N_Tropic": 0.0028,
+    "S_Tropic": 0.0035,
+    "S_Mid_Lat": 0.0027,
+    "Antarctic": -0.0028
+  },
+  {
+    "Year": 1994,
+    "Global": 0.0031,
+    "Arctic": 0.0034,
+    "N_Mid_Lat": 0.0041,
+    "N_Tropic": 0.0027,
+    "S_Tropic": 0.0034,
+    "S_Mid_Lat": 0.0026,
+    "Antarctic": -0.0002
+  },
+  {
+    "Year": 1995,
+    "Global": 0.0044,
+    "Arctic": 0.0131,
+    "N_Mid_Lat": 0.0031,
+    "N_Tropic": 0.004,
+    "S_Tropic": 0.0045,
+    "S_Mid_Lat": 0.0029,
+    "Antarctic": 0.0014
+  },
+  {
+    "Year": 1996,
+    "Global": 0.0033,
+    "Arctic": 0.0076,
+    "N_Mid_Lat": 0.001,
+    "N_Tropic": 0.003,
+    "S_Tropic": 0.0033,
+    "S_Mid_Lat": 0.0033,
+    "Antarctic": 0.0131
+  },
+  {
+    "Year": 1997,
+    "Global": 0.0046,
+    "Arctic": 0.0076,
+    "N_Mid_Lat": 0.0022,
+    "N_Tropic": 0.0049,
+    "S_Tropic": 0.0053,
+    "S_Mid_Lat": 0.0042,
+    "Antarctic": 0.0004
+  },
+  {
+    "Year": 1998,
+    "Global": 0.0061,
+    "Arctic": 0.0086,
+    "N_Mid_Lat": 0.0065,
+    "N_Tropic": 0.0059,
+    "S_Tropic": 0.0079,
+    "S_Mid_Lat": 0.0039,
+    "Antarctic": 0.0014
+  },
+  {
+    "Year": 1999,
+    "Global": 0.0038,
+    "Arctic": 0.004,
+    "N_Mid_Lat": 0.0073,
+    "N_Tropic": 0.0015,
+    "S_Tropic": 0.0025,
+    "S_Mid_Lat": 0.0046,
+    "Antarctic": 0.0002
+  },
+  {
+    "Year": 2000,
+    "Global": 0.0039,
+    "Arctic": 0.0096,
+    "N_Mid_Lat": 0.0055,
+    "N_Tropic": 0.002,
+    "S_Tropic": 0.0028,
+    "S_Mid_Lat": 0.0042,
+    "Antarctic": 0.0027
+  },
+  {
+    "Year": 2001,
+    "Global": 0.0053,
+    "Arctic": 0.0106,
+    "N_Mid_Lat": 0.0068,
+    "N_Tropic": 0.0039,
+    "S_Tropic": 0.0044,
+    "S_Mid_Lat": 0.0058,
+    "Antarctic": 0.0025
+  },
+  {
+    "Year": 2002,
+    "Global": 0.0063,
+    "Arctic": 0.0125,
+    "N_Mid_Lat": 0.0058,
+    "N_Tropic": 0.0054,
+    "S_Tropic": 0.0064,
+    "S_Mid_Lat": 0.0049,
+    "Antarctic": 0.0078
+  },
+  {
+    "Year": 2003,
+    "Global": 0.0061,
+    "Arctic": 0.0149,
+    "N_Mid_Lat": 0.0053,
+    "N_Tropic": 0.006,
+    "S_Tropic": 0.0066,
+    "S_Mid_Lat": 0.0044,
+    "Antarctic": 0.0037
+  },
+  {
+    "Year": 2004,
+    "Global": 0.0053,
+    "Arctic": 0.0046,
+    "N_Mid_Lat": 0.0066,
+    "N_Tropic": 0.0055,
+    "S_Tropic": 0.0054,
+    "S_Mid_Lat": 0.0048,
+    "Antarctic": -0.0005
+  },
+  {
+    "Year": 2005,
+    "Global": 0.0068,
+    "Arctic": 0.0198,
+    "N_Mid_Lat": 0.0056,
+    "N_Tropic": 0.0061,
+    "S_Tropic": 0.0062,
+    "S_Mid_Lat": 0.0049,
+    "Antarctic": 0.0068
+  },
+  {
+    "Year": 2006,
+    "Global": 0.0064,
+    "Arctic": 0.0174,
+    "N_Mid_Lat": 0.0069,
+    "N_Tropic": 0.0056,
+    "S_Tropic": 0.0054,
+    "S_Mid_Lat": 0.0051,
+    "Antarctic": 0.0044
+  },
+  {
+    "Year": 2007,
+    "Global": 0.0066,
+    "Arctic": 0.0207,
+    "N_Mid_Lat": 0.0068,
+    "N_Tropic": 0.0044,
+    "S_Tropic": 0.0048,
+    "S_Mid_Lat": 0.005,
+    "Antarctic": 0.0126
+  },
+  {
+    "Year": 2008,
+    "Global": 0.0054,
+    "Arctic": 0.0153,
+    "N_Mid_Lat": 0.0061,
+    "N_Tropic": 0.0033,
+    "S_Tropic": 0.0041,
+    "S_Mid_Lat": 0.0053,
+    "Antarctic": 0.0063
+  },
+  {
+    "Year": 2009,
+    "Global": 0.0065,
+    "Arctic": 0.0142,
+    "N_Mid_Lat": 0.0068,
+    "N_Tropic": 0.0064,
+    "S_Tropic": 0.007,
+    "S_Mid_Lat": 0.006,
+    "Antarctic": 0.0099
+  },
+  {
+    "Year": 2010,
+    "Global": 0.0072,
+    "Arctic": 0.0224,
+    "N_Mid_Lat": 0.0073,
+    "N_Tropic": 0.0071,
+    "S_Tropic": 0.0065,
+    "S_Mid_Lat": 0.0064,
+    "Antarctic": 0.0054
+  },
+  {
+    "Year": 2011,
+    "Global": 0.0061,
+    "Arctic": 0.0232,
+    "N_Mid_Lat": 0.0057,
+    "N_Tropic": 0.0038,
+    "S_Tropic": 0.0035,
+    "S_Mid_Lat": 0.0064,
+    "Antarctic": 0.011
+  },
+  {
+    "Year": 2012,
+    "Global": 0.0065,
+    "Arctic": 0.0215,
+    "N_Mid_Lat": 0.0073,
+    "N_Tropic": 0.0047,
+    "S_Tropic": 0.0057,
+    "S_Mid_Lat": 0.0056,
+    "Antarctic": 0.0045
+  },
+  {
+    "Year": 2013,
+    "Global": 0.0068,
+    "Arctic": 0.0154,
+    "N_Mid_Lat": 0.0069,
+    "N_Tropic": 0.0058,
+    "S_Tropic": 0.0058,
+    "S_Mid_Lat": 0.0063,
+    "Antarctic": 0.0086
+  },
+  {
+    "Year": 2014,
+    "Global": 0.0075,
+    "Arctic": 0.0204,
+    "N_Mid_Lat": 0.0073,
+    "N_Tropic": 0.0068,
+    "S_Tropic": 0.0065,
+    "S_Mid_Lat": 0.0073,
+    "Antarctic": 0.0056
+  },
+  {
+    "Year": 2015,
+    "Global": 0.009,
+    "Arctic": 0.0202,
+    "N_Mid_Lat": 0.0099,
+    "N_Tropic": 0.0097,
+    "S_Tropic": 0.0094,
+    "S_Mid_Lat": 0.0075,
+    "Antarctic": -0.0034
+  },
+  {
+    "Year": 2016,
+    "Global": 0.0101,
+    "Arctic": 0.0324,
+    "N_Mid_Lat": 0.0106,
+    "N_Tropic": 0.0094,
+    "S_Tropic": 0.0106,
+    "S_Mid_Lat": 0.0067,
+    "Antarctic": 0.0036
+  },
+  {
+    "Year": 2017,
+    "Global": 0.0092,
+    "Arctic": 0.0253,
+    "N_Mid_Lat": 0.0102,
+    "N_Tropic": 0.0085,
+    "S_Tropic": 0.0076,
+    "S_Mid_Lat": 0.0076,
+    "Antarctic": 0.0052
+  },
+  {
+    "Year": 2018,
+    "Global": 0.0085,
+    "Arctic": 0.0216,
+    "N_Mid_Lat": 0.0105,
+    "N_Tropic": 0.0072,
+    "S_Tropic": 0.0063,
+    "S_Mid_Lat": 0.0079,
+    "Antarctic": 0.0092
+  },
+  {
+    "Year": 2019,
+    "Global": 0.0098,
+    "Arctic": 0.0275,
+    "N_Mid_Lat": 0.0099,
+    "N_Tropic": 0.009,
+    "S_Tropic": 0.009,
+    "S_Mid_Lat": 0.0074,
+    "Antarctic": 0.0079
+  },
+  {
+    "Year": 2020,
+    "Global": 0.0101,
+    "Arctic": 0.0287,
+    "N_Mid_Lat": 0.0118,
+    "N_Tropic": 0.0087,
+    "S_Tropic": 0.0083,
+    "S_Mid_Lat": 0.0059,
+    "Antarctic": 0.0084
+  },
+  {
+    "Year": 2021,
+    "Global": 0.0085,
+    "Arctic": 0.0206,
+    "N_Mid_Lat": 0.0126,
+    "N_Tropic": 0.0071,
+    "S_Tropic": 0.006,
+    "S_Mid_Lat": 0.0073,
+    "Antarctic": 0.0028
+  },
+  {
+    "Year": 2022,
+    "Global": 0.0089,
+    "Arctic": 0.0235,
+    "N_Mid_Lat": 0.0126,
+    "N_Tropic": 0.0062,
+    "S_Tropic": 0.0052,
+    "S_Mid_Lat": 0.0079,
+    "Antarctic": 0.0107
+  },
+  {
+    "Year": 2023,
+    "Global": 0.0117,
+    "Arctic": 0.0256,
+    "N_Mid_Lat": 0.0146,
+    "N_Tropic": 0.0107,
+    "S_Tropic": 0.0105,
+    "S_Mid_Lat": 0.0091,
+    "Antarctic": 0.0065
+  },
+  {
+    "Year": 2024,
+    "Global": 0.0129,
+    "Arctic": 0.0289,
+    "N_Mid_Lat": 0.0165,
+    "N_Tropic": 0.0121,
+    "S_Tropic": 0.0117,
+    "S_Mid_Lat": 0.0088,
+    "Antarctic": 0.007
+  }
+]
