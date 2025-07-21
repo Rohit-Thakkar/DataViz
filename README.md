@@ -2,7 +2,7 @@
 
 This project is a data visualization coursework submission that explores historical climate change trends using interactive charts and maps. Built entirely with D3.js, it presents a series of web-based visualizations to analyze global and zonal temperature anomalies from 1880 to the present.
 
-**Live Demo:** [Link to your live GitHub Pages site]
+**Live Demo:** 
 
 ---
 
@@ -57,20 +57,3 @@ A Python script (`csv_make.py`) using the pandas library was developed to proces
 * **Data Processing:** Python 3 with the pandas library
 * **Web:** HTML5, CSS3, JavaScript (ES6)
 * **Geographic Data:** TopoJSON
-
----
-
-## How to Run Locally
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
-    ```
-2.  **Start a local web server:**
-    Since all necessary `.json` data files are included in the repository, you can start a server immediately.
-    ```bash
-    python -m http.server
-    ```
-3.  **View the project:**
-    Open your browser and navigate to `http://localhost:8000`. You can then visit `graph.html`, `main.html`, and `map_compare.html`.
